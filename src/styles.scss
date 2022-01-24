@@ -8,3 +8,32 @@
 
 /* FONT */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* ICONE PRINCIPAL */
+
+.svg-inline--fa {
+    font-size: 3em;
+}
+
+.header-auth {
+    padding: 4vw;
+}
+
+/* Pour le fond des deux pages d'authentification */
+.form-container {
+    background: linear-gradient(#7A78E9, #FF715B);
+    color: white;
+    height: 100vh;
+    font-size: 5vw;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
