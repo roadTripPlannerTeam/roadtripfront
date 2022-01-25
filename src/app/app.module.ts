@@ -13,6 +13,8 @@ import { SignupComponent } from './signup/signup.component';
 import { FormSigninComponent } from './form-signin/form-signin.component';
 import { NotYetSignupComponent } from './not-yet-signup/not-yet-signup.component';
 import { NotYetSigninComponent } from './not-yet-signin/not-yet-signin.component';
+import { UserprofilComponent } from './userprofil/userprofil.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NotYetSigninComponent } from './not-yet-signin/not-yet-signin.component
     SigninComponent,
     SignupComponent,
     FormSigninComponent,
-    NotYetSigninComponent
+    NotYetSigninComponent,
+    UserprofilComponent,
+    NavbarComponent
   ],
   imports: [
     HttpClientModule,

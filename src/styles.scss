@@ -37,3 +37,20 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #FF715B;
+    color: white;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+.fa-heart, .fa-map-marker-alt, .fa-location-arrow {
+    color: #FF715B;
+    stroke: #FFFFFF;
+    stroke-width: 55;
+}
