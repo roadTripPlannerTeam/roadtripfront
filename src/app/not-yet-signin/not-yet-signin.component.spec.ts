@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NotYetSignupComponent } from './not-yet-signup.component';
 
+import { NotYetSigninComponent } from './not-yet-signin.component';
 
-describe('NotYetSignupComponent', () => {
-  let component: NotYetSignupComponent;
-  let fixture: ComponentFixture<NotYetSignupComponent>;
+describe('NotYetSigninComponent', () => {
+  let component: NotYetSigninComponent;
+  let fixture: ComponentFixture<NotYetSigninComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotYetSignupComponent ]
+      declarations: [ NotYetSigninComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotYetSignupComponent);
+    fixture = TestBed.createComponent(NotYetSigninComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

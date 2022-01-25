@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NotYetSignupComponent } from './not-yet-signup.component';
 
+import { FormSigninComponent } from './form-signin.component';
 
-describe('NotYetSignupComponent', () => {
-  let component: NotYetSignupComponent;
-  let fixture: ComponentFixture<NotYetSignupComponent>;
+describe('FormSigninComponent', () => {
+  let component: FormSigninComponent;
+  let fixture: ComponentFixture<FormSigninComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotYetSignupComponent ]
+      declarations: [ FormSigninComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotYetSignupComponent);
+    fixture = TestBed.createComponent(FormSigninComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
