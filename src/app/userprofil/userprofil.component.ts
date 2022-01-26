@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-userprofil',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userprofil.component.scss']
 })
 export class UserprofilComponent implements OnInit {
+
+  faArrowLeft = faArrowLeft;
 
   constructor() { }
 

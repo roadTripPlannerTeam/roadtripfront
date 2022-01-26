@@ -1,3 +1,7 @@
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-indigo/theme.css";
+@import "primeng/resources/primeng.min.css";
+
 /* RESET */
 
 *, ::before, :after {
@@ -23,21 +27,6 @@ body {
     padding: 4vw;
 }
 
-/* Pour le fond des deux pages d'authentification */
-.form-container {
-    background: linear-gradient(#7A78E9, #FF715B);
-    color: white;
-    height: 100vh;
-    font-size: 5vw;
-}
-
-.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 /* NAVBAR */
 .navbar {
     display: flex;
@@ -52,5 +41,5 @@ body {
 .fa-heart, .fa-map-marker-alt, .fa-location-arrow {
     color: #FF715B;
     stroke: #FFFFFF;
-    stroke-width: 55;
+    stroke-width: 50;
 }

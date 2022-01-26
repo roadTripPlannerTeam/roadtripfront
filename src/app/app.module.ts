@@ -15,6 +15,9 @@ import { NotYetSignupComponent } from './not-yet-signup/not-yet-signup.component
 import { NotYetSigninComponent } from './not-yet-signin/not-yet-signin.component';
 import { UserprofilComponent } from './userprofil/userprofil.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {ButtonModule} from 'primeng/button';
+import {AvatarModule} from 'primeng/avatar';
+import { FormUpdateComponent } from './form-update/form-update.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,16 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormSigninComponent,
     NotYetSigninComponent,
     UserprofilComponent,
-    NavbarComponent
+    NavbarComponent,
+    FormUpdateComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ButtonModule,
+    AvatarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
