@@ -1,41 +1,44 @@
 <div class="box">
     <h3><strong>INSCRIPTION</strong></h3>
 
-    <form class="formBloc">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="formBloc">
 
         <div class="formGroupe">
 
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" required minlength="3" maxlength="16">
+            <label for="nom">Prenom</label>
+            <input formControlName="firstName" type="text" id="nom" required minlength="3" maxlength="16">
 
         </div>
 
         <div class="formGroupe">
 
-            <label for="prenom">Prenom</label>
-            <input type="text" id="prenom" required minlength="3" maxlength="16">
+            <label for="prenom">Nom</label>
+            <input formControlName="lastName" type="text" id="prenom" required minlength="3" maxlength="16">
 
         </div>
 
         <div class="formGroupe">
 
             <label for="email">Email</label>
-            <input type="text" id="email" required minlength="3" maxlength="30">
+            <input formControlName="email" type="text" id="email" required minlength="3" maxlength="30">
 
         </div>
 
         <div class="formGroupe">
 
             <label for="mdp">Mot de passe</label>
-            <input type="text" id="mdp" required minlength="3" maxlength="16">
+            <input formControlName="password" type="password" id="mdp" required minlength="3" maxlength="16">
 
         </div>
 
         <div class="formGroupe">
 
             <label for="date-naissance">Date de naissance</label>
-            <input type="date" id="date-naissance" required>
+            <input formControlName="birthday" type="date" id="date-naissance" required>
 
+        </div>
+        <div class="btnSubmit">
+            <button pButton type="submit" label="VALIDER" ></button>
         </div>
     </form>
 </div>

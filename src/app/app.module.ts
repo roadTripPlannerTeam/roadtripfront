@@ -18,6 +18,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {ButtonModule} from 'primeng/button';
 import {AvatarModule} from 'primeng/avatar';
 import { FormUpdateComponent } from './form-update/form-update.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormUpdateComponent } from './form-update/form-update.component';
     AppRoutingModule,
     FontAwesomeModule,
     ButtonModule,
-    AvatarModule
+    AvatarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

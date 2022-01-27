@@ -44,3 +44,9 @@ h3 {
 .formBloc .formGroupe.animation input {
     border-bottom-color: #a9b2e7;
 }
+
+.btnSubmit {
+    display: flex;
+    justify-content: center;
+    padding: 0 1em 3em 1em;
+}
