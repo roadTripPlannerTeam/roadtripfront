@@ -1,3 +1,4 @@
+import { User } from './../_models/User';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,9 +12,8 @@ export class SignupService {
 
   constructor(private http: HttpClient) {  }
 
-  save(user:Object):Observable<Object>{
-    return this.http.post(ROOT_URL,user)
+  save(user: User):Observable<Object>{
+    return this.http.post(ROOT_URL, user)
   
   }
-  
 }
