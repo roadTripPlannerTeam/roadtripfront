@@ -1,43 +1,35 @@
-
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignupService } from '../_services/signup.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-signup',
   templateUrl: './form-signup.component.html',
   styleUrls: ['./form-signup.component.scss']
 })
+
 export class FormSignupComponent implements OnInit {
 
-  userForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    birthday: new FormControl(''),
-    password: new FormControl(''),
-  });
+  userForm: FormGroup;
+  submitted: Boolean = false
 
-  service: SignupService;
-  routeur: Router;
-
-  constructor(service: SignupService, router: Router){
-    this.service = service;
-    this.routeur = router;
+  constructor(private signupService: SignupService){
+    this.userForm = new FormGroup({
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      birthday: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmit(): void {
-    this.service.save(this.userForm.value).subscribe(
-      data => {
-        console.log(data);
-      },
-      err => {
-        console.log("marche po");
-      }
-    )
-  }
+  createUser(): void {
+    this.signupService.create(this.userForm.value).subscribe({
+      next: () => null,
+      error: err => console.error(err),
+      complete: () =>console.log("utilisateur enregistré")
+    })
+  }  
 }

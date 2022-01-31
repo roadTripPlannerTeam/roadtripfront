@@ -1,33 +1,44 @@
 <div class="box">
     <h3><strong>INSCRIPTION</strong></h3>
 
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="formBloc">
+    <form [formGroup]="userForm" (ngSubmit)="createUser()" class="formBloc">
 
         <div class="formGroupe">
 
-            <label for="nom">Prenom</label>
+            <label for="prenom">Prenom</label>
             <input formControlName="firstName" type="text" id="nom" required minlength="3" maxlength="16">
-
+            <span pButton class="empty-input p-button-sm p-button-raised p-button-rounded p-button-warning"
+                icon="pi pi-times"
+                *ngIf="userForm.controls['firstName'].invalid && (userForm.controls['firstName'].touched)"></span>
         </div>
 
         <div class="formGroupe">
 
             <label for="prenom">Nom</label>
             <input formControlName="lastName" type="text" id="prenom" required minlength="3" maxlength="16">
+            <span pButton class="empty-input p-button-sm p-button-raised p-button-rounded p-button-warning"
+                icon="pi pi-times"
+                *ngIf="userForm.controls['lastName'].invalid && (userForm.controls['lastName'].touched)"></span>
 
         </div>
 
         <div class="formGroupe">
 
             <label for="email">Email</label>
-            <input formControlName="email" type="text" id="email" required minlength="3" maxlength="30">
+            <input formControlName="email" type="email" id="email" required minlength="3" maxlength="30">
+            <span pButton class="empty-input p-button-sm p-button-raised p-button-rounded p-button-warning"
+                icon="pi pi-times"
+                *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].touched)"></span>
 
         </div>
 
         <div class="formGroupe">
 
             <label for="mdp">Mot de passe</label>
-            <input formControlName="password" type="password" id="mdp" required minlength="3" maxlength="16">
+            <input placeholder="Minimum 6 caractères" formControlName="password" type="password" id="mdp" required minlength="3" maxlength="16">
+            <span pButton class="empty-input p-button-sm p-button-raised p-button-rounded p-button-warning"
+                icon="pi pi-times"
+                *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].touched)"></span>
 
         </div>
 
@@ -35,10 +46,14 @@
 
             <label for="date-naissance">Date de naissance</label>
             <input formControlName="birthday" type="date" id="date-naissance" required>
+            <span pButton class="empty-input p-button-sm p-button-raised p-button-rounded p-button-warning"
+                icon="pi pi-times"
+                *ngIf="userForm.controls['birthday'].invalid && (userForm.controls['birthday'].touched)"></span>
 
         </div>
         <div class="btnSubmit">
-            <button pButton type="submit" label="VALIDER" ></button>
+            <button [disabled]="!this.userForm.valid" pButton type="submit" label="VALIDER"></button>
         </div>
+
     </form>
 </div>
