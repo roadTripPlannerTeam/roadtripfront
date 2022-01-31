@@ -2,8 +2,7 @@ import { User } from './../_models/User';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-const  ROOT_URL:string ="http://localhost:8080/api/auth/signup"
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +11,7 @@ export class SignupService {
 
   constructor(private http: HttpClient) {  }
 
-  save(user: User):Observable<Object>{
-    return this.http.post(ROOT_URL, user)
-  
+  create(user: User):Observable<User>{
+    return this.http.post<User>(`${environment.URL}/api/auth/signup`, user)
   }
 }
