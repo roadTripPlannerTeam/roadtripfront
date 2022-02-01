@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-indigo/theme.css";
+@import "primeng/resources/primeng.min.css";
+
+/* RESET */
+
+*, ::before, :after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* FONT */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* ICONE PRINCIPAL */
+
+.svg-inline--fa {
+    font-size: 3em;
+}
+
+.header-auth {
+    padding: 4vw;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #FF715B;
+    color: white;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+.fa-heart, .fa-map-marker-alt, .fa-location-arrow {
+    color: #FF715B;
+    stroke: #FFFFFF;
+    stroke-width: 50;
+}

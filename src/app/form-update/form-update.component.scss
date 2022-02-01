@@ -1,0 +1,44 @@
+.user-icon {
+    padding: 5vw;
+    text-align: center;
+    letter-spacing: 0.5vw;
+}
+
+.formBloc .formGroupe {
+    position: relative;
+    display: flex;
+    margin-bottom: 10vw;
+}
+
+.formBloc .formGroupe label {
+    position: absolute;
+    left: 0px;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 5vw;
+    transition: 0.4s ease-out;
+}
+
+.formBloc .formGroupe input {
+    display: block;
+    width: 100%;
+    padding: 2vw 0px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid black;
+    color: black;
+    transition: 0.4s ease-out;
+}
+
+.formBloc .formGroupe:focus-within label,
+.formBloc .formGroupe.animation label {
+    top: 0px;
+    transform: translateY(-100%);
+    color: grey;
+}
+
+.formBloc .formGroupe:focus-within input,
+.formBloc .formGroupe.animation input {
+    border-bottom-color: grey;
+}
