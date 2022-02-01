@@ -32,6 +32,18 @@ h3 {
     transition: 0.4s ease-out;
 }
 
+.formBloc .formGroupe input.ng-invalid.ng-touched{
+    display: block;
+    width: 100%;
+    padding-top: 2vw;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid rgb(245, 55, 55);
+    color: #FFF;
+    transition: 0.4s ease-out;
+}
+
 .formBloc .formGroupe:focus-within label,
 .formBloc .formGroupe.animation label {
     top: 0px;
@@ -52,6 +64,19 @@ h3 {
 
 .empty-input {
     color: rgb(37, 27, 27);
+    position: absolute;
+    left: -60px;
+    top: -23px;
+    width: 2px;
+    height: 2px;
+    font-size: 2px;
+}
+
+.btn-danger{
+    background : red;
+    width:1em;
+    height:1em;
+    border-radius:0.5em
 }
 
 ::placeholder { 
