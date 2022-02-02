@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
+  logBool: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  hideSignin(event: boolean){
+    this.logBool = event;
   }
 
 }

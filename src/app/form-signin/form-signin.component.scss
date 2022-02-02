@@ -24,11 +24,23 @@ h3 {
 .formBloc .formGroupe input {
     display: block;
     width: 100%;
-    padding: 2vw 0px;
+    padding-top: 2vw;
     border: none;
     outline: none;
     background: none;
     border-bottom: 3px solid #FFF;
+    color: #FFF;
+    transition: 0.4s ease-out;
+}
+
+.formBloc .formGroupe input.ng-invalid.ng-touched{
+    display: block;
+    width: 100%;
+    padding-top: 2vw;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid rgb(245, 55, 55);
     color: #FFF;
     transition: 0.4s ease-out;
 }
@@ -49,4 +61,33 @@ h3 {
     display: flex;
     justify-content: center;
     padding: 0 1em 3em 1em;
+}
+
+.login-success {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50%;
+}
+
+.login-success p {
+    margin: 5px;
+}
+
+.login-error {
+    color: red;
+    width: 70%;
+    position: absolute;
+    background-color: #a9b2e7;
+    border-radius: 13px;
+    font-size: 0.7em;
+    align-items: center;
+    margin-top: 75px;
+}
+
+.login-error p {
+    padding: 0.5em;
+    align-items: center;
+    text-align: center;
 }

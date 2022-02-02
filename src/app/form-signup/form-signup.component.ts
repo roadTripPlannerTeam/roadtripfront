@@ -9,7 +9,6 @@ import { SignupService } from '../_services/signup.service';
 })
 export class FormSignupComponent implements OnInit {
   userForm: FormGroup;
-  submitted: Boolean = false;
 
   constructor(private signupService: SignupService) {
     this.userForm = new FormGroup({
@@ -30,7 +29,7 @@ export class FormSignupComponent implements OnInit {
     this.signupService.create(this.userForm.value).subscribe({
       next: () => null,
       error: (err) => console.error(err),
-      complete: () => console.log('utilisateur enregistré'),
+      complete: () => console.log('utilisateur enregistré')
     });
   }
 }
