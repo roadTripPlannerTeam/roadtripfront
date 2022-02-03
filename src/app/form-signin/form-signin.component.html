@@ -20,13 +20,13 @@
         <div class="btnSubmit">
             <button [disabled]="!this.signinForm.valid" pButton type="submit" label="VALIDER"></button>
             <div class="login-error" *ngIf="isLoginFailed">
-                <p>Veuillez vérifier votre email et votre mot de passe.</p> 
+                <p>Veuillez vérifier votre email et votre mot de passe.</p>
             </div>
         </div>
 
     </form>
     <div class="login-success" *ngIf="isLoggedIn">
-       <p>Vous êtes bien connecté !</p> 
-       <p routerLink="/itineraries">Allez explorer ou créer des intinéraires.</p> 
+        <p>Bienvenue {{nameUser}} !</p>
+        <p>Vous allez être redirigé(e) sur la page création d'itinéraire.</p>
     </div>
 </div>

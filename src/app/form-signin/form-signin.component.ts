@@ -2,6 +2,7 @@ import { TokenStorageService } from './../_services/token-storage.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SigninService } from '../_services/signin.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,10 +18,12 @@ export class FormSigninComponent implements OnInit {
   signinForm: FormGroup;
   isLoggedIn = false;
   isLoginFailed = false;
+  nameUser: string = '';
 
   constructor(
     private signinService: SigninService,
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    private router: Router
   ) {
     this.signinForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -43,6 +46,9 @@ export class FormSigninComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.Loggedin.emit(this.bool);
+        this.nameUser = data.firstName;
+        setTimeout(this.goToItineraries.bind(this), 3000);
+        
       },
       error: (err) => {
         console.error(err);
@@ -50,5 +56,9 @@ export class FormSigninComponent implements OnInit {
       },
       complete: () => console.log('utilisateur logé'),
     });
+  }
+
+  goToItineraries(): void {
+    this.router.navigate(["profil"]);
   }
 }

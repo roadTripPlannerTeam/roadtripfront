@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormSignupComponent } from './form-signup/form-signup.component';
-import { ConfirmButtonComponent } from './confirm-button/confirm-button.component';
 import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SigninComponent } from './signin/signin.component';
@@ -24,7 +23,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     FormSignupComponent,
-    ConfirmButtonComponent,
     NotYetSignupComponent,
     HeaderAuthComponent,
     SigninComponent,

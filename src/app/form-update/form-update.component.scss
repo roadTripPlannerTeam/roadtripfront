@@ -1,7 +1,8 @@
 .user-icon {
-    padding: 5vw;
+    padding: 2vw 20vw 2vw 20vw;
     text-align: center;
     letter-spacing: 0.5vw;
+    margin-bottom: 1em;
 }
 
 .formBloc .formGroupe {
@@ -22,7 +23,7 @@
 .formBloc .formGroupe input {
     display: block;
     width: 100%;
-    padding: 2vw 0px;
+    padding-top: 2vw;
     border: none;
     outline: none;
     background: none;
@@ -41,4 +42,22 @@
 .formBloc .formGroupe:focus-within input,
 .formBloc .formGroupe.animation input {
     border-bottom-color: grey;
+}
+
+.btnSubmit {
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.formBloc .formGroupe input.ng-invalid.ng-touched{
+    display: block;
+    width: 100%;
+    padding-top: 2vw;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid rgb(245, 55, 55);
+    color: #FFF;
+    transition: 0.4s ease-out;
 }
