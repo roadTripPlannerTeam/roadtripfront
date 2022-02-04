@@ -14,5 +14,6 @@ export class HeaderAuthComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
 }

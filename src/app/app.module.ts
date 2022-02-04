@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,8 +17,8 @@ import { UserprofilComponent } from './userprofil/userprofil.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ButtonModule} from 'primeng/button';
 import {AvatarModule} from 'primeng/avatar';
-import { FormUpdateComponent } from './form-update/form-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormUpdateComponent } from './form-update/form-update.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     ButtonModule,
     AvatarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

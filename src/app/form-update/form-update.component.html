@@ -35,7 +35,14 @@
 
         </div>
 
-        <div class="formGroupe">
+        <div (click)="newDateClicked()" *ngIf="!showNewDate" class="formGroupe">
+
+            <label for="date-naissance">Date de naissance</label>
+            <input  formControlName="birthday" type="texte" id="date-naissance" required>
+
+        </div>
+
+        <div *ngIf="showNewDate" class="formGroupe">
 
             <label for="date-naissance">Date de naissance</label>
             <input formControlName="birthday" type="date" id="date-naissance" required>
