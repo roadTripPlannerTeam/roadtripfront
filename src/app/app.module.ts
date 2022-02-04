@@ -10,7 +10,6 @@ import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { FormSigninComponent } from './form-signin/form-signin.component';
 import { NotYetSignupComponent } from './not-yet-signup/not-yet-signup.component';
 import { NotYetSigninComponent } from './not-yet-signin/not-yet-signin.component';
 import { UserprofilComponent } from './userprofil/userprofil.component';
@@ -19,6 +18,7 @@ import {ButtonModule} from 'primeng/button';
 import {AvatarModule} from 'primeng/avatar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormUpdateComponent } from './form-update/form-update.component';
+import { FormSigninComponent } from './form-signin/form-signin.component';
 
 @NgModule({
   declarations: [
