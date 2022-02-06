@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Country } from 'src/app/models/countrie';
 
 @Component({
   selector: 'app-condition-general-country',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConditionGeneralCountryComponent implements OnInit {
 
+  @Input()countrie!: Country[];
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
 
 }

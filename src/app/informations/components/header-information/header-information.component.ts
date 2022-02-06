@@ -10,13 +10,18 @@ export class HeaderInformationComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   faUser = faUser;
 
-  
+  infoTitle: boolean = false;
 
+  @Output() cityOpen : EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  cityTitleOpen(){
+    this.cityOpen.emit(this.infoTitle);
+  }
 
+ 
 
 }

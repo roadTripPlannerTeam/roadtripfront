@@ -1,5 +1,5 @@
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +18,12 @@ import { InfoGeneraleCityComponent } from './informations/components/info-genera
 import { TimeComponent } from './informations/components/time/time.component';
 import { WeatherComponent } from './informations/components/weather/weather.component';
 import { TransportComponent } from './informations/components/transport/transport.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { NavbarComponent } from './informations/components/navbar/navbar.component';
+registerLocaleData(localeFr, 'fr');
 
 
 
@@ -39,15 +44,22 @@ import { TransportComponent } from './informations/components/transport/transpor
     TimeComponent,
     WeatherComponent,
     TransportComponent,
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-   FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule,
+    FontAwesomeModule
   ],
 
 
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'fr' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

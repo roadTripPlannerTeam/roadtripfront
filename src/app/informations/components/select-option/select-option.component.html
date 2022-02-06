@@ -1,9 +1,6 @@
 <div class="bloc-select">
-    <select class="select-option">
-        <option>JAPON </option>
-        <option>FRANCE</option>
+
+    <select class="select-option" (change)="afficher($event)">
+        <option *ngFor="let country of countrie; let i = index" class="option" >{{country.translations.fra.common}}</option>
     </select>
 </div>
-
-
-

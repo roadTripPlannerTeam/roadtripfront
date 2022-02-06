@@ -1,7 +1,23 @@
-<app-header-information ></app-header-information>
+<div class="body_info">
+<app-header-information (cityOpen)="cityTitleOpen($event)" ></app-header-information>
 <app-affichage-information></app-affichage-information>
 <app-lien-information (cityHidden)="hideInfoCity($event)" (countryHidden)="hideInfoCountry($event)">
 </app-lien-information>
-<app-select-option></app-select-option>
+<app-select-option [countrie]="countrie" (envoiId)="idSelect($event)"></app-select-option>
 
-<router-outlet></router-outlet>
+<!-- Part Country -->
+<app-information-country-title *ngIf="infoCountryTitle" (infoCountry)="infoCount($event)" (condition)="conditionGenerale($event)" (motcles)="traduction($event)"></app-information-country-title>
+<app-info-generales-country [oneCount]="selectedCountry" *ngIf=" infogeneraleCountry"></app-info-generales-country>
+<app-condition-general-country [countrie]="countrie" *ngIf="conditionGeneral"></app-condition-general-country>
+<app-mots-cles *ngIf="motcles"></app-mots-cles>
+
+<!-- Part City-->
+<app-information-city-title *ngIf="infoCityTitle"(infoCity)="infoCityGenerale($event)" (hour)="timeCity($event)" (sun)="weatherCity($event)" (car)="transportCity($event)"></app-information-city-title>
+<app-info-generale-city *ngIf="infoGeneraleCity" ></app-info-generale-city>
+<app-time [oneCount]="selectedCountry" *ngIf="time"></app-time>
+<app-transport *ngIf="transport"></app-transport>
+<app-weather [oneCount]="selectedCountry" [weather]="selectedWeather" *ngIf="weather"></app-weather>
+</div>
+<footer class="footer_info">
+    <app-navbar></app-navbar>
+</footer>

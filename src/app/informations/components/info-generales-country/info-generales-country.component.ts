@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
+import { Country } from 'src/app/models/countrie';
 
 @Component({
   selector: 'app-info-generales-country',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoGeneralesCountryComponent implements OnInit {
 
+  @Input() oneCount!: Country;
+
   constructor() { }
 
   ngOnInit(): void {
+    // let id = this.route.snapshot.paramMap.get('id')
   }
 
 }
