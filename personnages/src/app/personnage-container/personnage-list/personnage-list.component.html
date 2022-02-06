@@ -1,0 +1,17 @@
+<h3 class="mb-20">Liste des personnages</h3>
+<ul *ngIf="personnages" class="mb-20 list-primary ">
+	<li class="d-flex flex-justify-content-between"
+		*ngFor="let personnage of personnages ; let index = index">
+        <div >
+            {{ personnage.name }}
+
+        </div>
+        <div >
+            <button class="btn btn-secondary mr-10">supprimer</button>
+            <button routerLink="new" class="btn btn-primary mr-10">ajouter un personnage</button>
+            <button class="btn btn-third"  [routerLink]="[index]">details</button>
+
+        </div> 
+
+	</li>
+</ul>
