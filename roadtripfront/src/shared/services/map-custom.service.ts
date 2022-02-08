@@ -32,52 +32,39 @@ export class MapCustomService {
 
   }
 
- 
-  
+  // construction map 
+  buildMap(): Promise<any> {
+    /**
+     * TODO: Aqui construimos el mapa
+     */
+    return new Promise((resolve, reject) => {
+      try {
+        this.map = new mapboxgl.Map({
+          container: 'map',
+          style: this.style,
+          zoom: this.zoom,
+          center: [this.lng, this.lat]
+        });
+        resolve({
+          map: this.map
+        });
 
-// construction map 
-buildMap(): Promise<any> {
-  /**
-   * TODO: Aqui construimos el mapa
-   */
-  return new Promise((resolve, reject) => {
-    try {
-      this.map = new mapboxgl.Map({
-        container: 'map',
-        style: this.style,
-        zoom: this.zoom,
-        center: [this.lng, this.lat]
-      });
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
 
-      // this.map.addControl(new mapboxgl.NavigationControl())
 
-      /**
-       *  TODO: Aqui construimos el input buscador de direcciones
-       */
-       const geocoder = this.map.addControl(
-         new MapboxGeocoder({
-             accessToken: mapboxgl.accessToken,
-           }));
+  getMap() {
+      return this.map;
+  }
 
-      // *************
-      geocoder.on('result', ($event) => {
-        const {result} = $event;
-        //geocoder.clear();
-        console.log('*********', result)
-      })
-
-      resolve({
-        map: this.map,
-        geocoder
-      });
-
-    } catch (e) {
-      reject(e);
-    }
-  });
-}
-        
-      
+  forwardGeocoding(address: string): Observable<Object> {
+    const uri = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${environment.mapKey}`;
+    return this.http.get(uri);
+  }
+            
 }  
       
 

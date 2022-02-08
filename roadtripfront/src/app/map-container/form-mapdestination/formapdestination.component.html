@@ -1,14 +1,12 @@
-<p class="mb-6 title "> Votre road Trip</p>
-<form [formGroup]="mapDestinationForm" (ngSubmit)="submit()" >
-    <div class="form-group d-flex flex-column" >
-        <input formControlName="depart"  type="text" >
+<p class="mb-6 title ">Votre road Trip</p>
+<form [formGroup]="mapDestinationForm" (ngSubmit)="submit()">
+    <div class="form-group d-flex flex-column">
+        <input formControlName="depart" type="text">
     </div>
-    <!-- <div formControlName="arrivee" type="text" class="form-group d-flex flex-column"> -->
-        <input ngx-google-places-autocomplete [options]="options" 
-         (onAddressChange)="AddressChange($event)"/>
-            
-    <!-- </div>  -->
-
-    <div class="actions " >
-        <button [disabled]="mapDestinationForm.invalid" class=" mt-4 btn btn-form mr-10" >Quand partez vous ?</button>
+    <div class="form-group d-flex flex-column">
+        <input formControlName="arrivee" type="text">
     </div>
+    <div class="actions ">
+        <button [disabled]="mapDestinationForm.invalid" class=" mt-4 btn btn-form mr-10">Quand partez vous ?</button>
+    </div>
+</form>
