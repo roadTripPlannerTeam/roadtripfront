@@ -4,9 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: "managetrip", component: ManageTripComponent},
-  //{path: "todolist", component: },
-  //{path: "budget", component:},
-  //{path: "conversion", component:},
+  //{path: "todolist", component: TodolistComponent},
+  //{path: "todolist", component: TodolistFormComponent},
+  //{path: "budget", component: BudgetComponent},
+  //{path: "conversion", component: ConversionComponent},
 ];
 
 @NgModule({
