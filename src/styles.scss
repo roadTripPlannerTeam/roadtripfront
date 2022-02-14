@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-indigo/theme.css";
+@import "primeng/resources/primeng.min.css";
+
+
 // Header Information
 *{ 
     margin:0;
@@ -41,6 +46,7 @@
     background: linear-gradient(#7A78E9, #FF715B);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ccff0000",endColorstr="#8500578",GradientType=1);
 }
+
 .affichage_information{
     height:25vh;
     z-index:2;
@@ -102,6 +108,7 @@ p{
     margin-bottom : 3vh;
 }
 
+
 .div_overlay{
     position:absolute;
     z-index: 2;
@@ -129,6 +136,8 @@ p{
     height:20vh;
     border-radius: 1.5em;
 }
+
+
 
 .stage_text{
     position: relative;
@@ -180,12 +189,6 @@ p{
     width: 7em;
 }
 
-//navBar
-.navbar {
-
-@import "primeicons/primeicons.css";
-@import "primeng/resources/themes/lara-light-indigo/theme.css";
-@import "primeng/resources/primeng.min.css";
 
 /* RESET */
 
@@ -195,8 +198,7 @@ p{
     padding: 0;
 }
 
-/* FONT */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
 
 body {
     font-family: "Poppins", sans-serif;
@@ -241,5 +243,4 @@ body {
      font-size: 2.5em;
     
 
-}
 }

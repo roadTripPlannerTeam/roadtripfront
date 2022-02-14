@@ -8,5 +8,7 @@ export const environment = {
   URLIcon:"http://openweathermap.org/img/wn/" ,
   URLBack:"http://localhost:8080/itinerary",
   URLMapBox:"https://api.mapbox.com/geocoding/v5/mapbox.places/",
-  APAIKEYMapBox:".json?access_token=pk.eyJ1IjoiYnJpY2VkbyIsImEiOiJja3pjeGRlOTkwMXRkMnFucjlodXB0YWx3In0.DJ9eedAkEdFQQX4C6fZObQ"
+  APAIKEYMapBox:".json?access_token=pk.eyJ1IjoiYnJpY2VkbyIsImEiOiJja3pjeGRlOTkwMXRkMnFucjlodXB0YWx3In0.DJ9eedAkEdFQQX4C6fZObQ",
+
+  URL:"http://localhost:8080"
 };

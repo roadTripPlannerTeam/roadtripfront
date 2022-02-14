@@ -73,7 +73,10 @@ import { FormSigninComponent } from './form-signin/form-signin.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AvatarModule,
+    ReactiveFormsModule,
+    ButtonModule
   ],
 
 
