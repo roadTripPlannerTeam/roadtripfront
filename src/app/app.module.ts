@@ -1,5 +1,6 @@
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,10 +23,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { NavbarComponent } from './informations/components/navbar/navbar.component';
 registerLocaleData(localeFr, 'fr');
-
-
+import { FormSignupComponent } from './form-signup/form-signup.component';
+import { HeaderAuthComponent } from './header-auth/header-auth.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { NotYetSignupComponent } from './not-yet-signup/not-yet-signup.component';
+import { NotYetSigninComponent } from './not-yet-signin/not-yet-signin.component';
+import { UserprofilComponent } from './userprofil/userprofil.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {ButtonModule} from 'primeng/button';
+import {AvatarModule} from 'primeng/avatar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormUpdateComponent } from './form-update/form-update.component';
+import { FormSigninComponent } from './form-signin/form-signin.component';
 
 @NgModule({
   declarations: [
@@ -44,11 +55,19 @@ registerLocaleData(localeFr, 'fr');
     TimeComponent,
     WeatherComponent,
     TransportComponent,
+    FormSignupComponent,
+    NotYetSignupComponent,
+    HeaderAuthComponent,
+    SigninComponent,
+    SignupComponent,
+    FormSigninComponent,
+    NotYetSigninComponent,
+    UserprofilComponent,
     NavbarComponent,
-
-
+    FormUpdateComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
@@ -59,7 +78,11 @@ registerLocaleData(localeFr, 'fr');
 
 
   providers: [
-    {provide: LOCALE_ID, useValue: 'fr' }
+    {provide: LOCALE_ID, useValue: 'fr' },
+    ButtonModule,
+    AvatarModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   bootstrap: [AppComponent]
 })
