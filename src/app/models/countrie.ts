@@ -14,22 +14,20 @@ export interface Country{
     translations :{
         fra:{
             common:string; 
-        }
-          
-    }  
+        } 
+    } 
      
     timezones:{
        [0]: string;
-    } 
+    }
     
-
     continents:{
         0 :string;
-    },
+    }
 
     capital:{
         0: string;
-    },
+    }
 
     car:{
         side : string;

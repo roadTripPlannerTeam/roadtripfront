@@ -1,3 +1,5 @@
+
+import { MapCustomServiceService } from './../../services/map-custom-service.service';
 import { Weather } from './../../models/weather';
 import { MeteoServiceService } from './../../services/meteo-service.service';
 import { Country } from 'src/app/models/countrie';
@@ -12,7 +14,7 @@ import { CountryServiceService } from 'src/app/services/country-service.service'
 })
 export class InformationComponent implements OnInit {
 
-  public toto:string[]=[];
+  
   //Display first page for information
   infoCountry: boolean = true;
   infoCity: boolean = false;
@@ -40,13 +42,14 @@ export class InformationComponent implements OnInit {
   selectedCountry!: Country;
   selectedWeather! : Weather;
   weatherlike : Weather[]=[]
+  countryWeather:string="";
+ 
   //
-  constructor(private serviceCountry: CountryServiceService , private serviceWeather: MeteoServiceService) { }
+  constructor(private serviceCountry: CountryServiceService , private serviceWeather: MeteoServiceService ) { }
 
   ngOnInit(): void {
     this.getData();
-    this.idSelect(this.country);
-    this.getWeather();
+    //this.idSelect(this.country);  
   }
 
   // function for get all countries & get one country 
@@ -56,31 +59,30 @@ export class InformationComponent implements OnInit {
       //console.log(this.countrie);
     });
   }
-
+ 
+ 
   idSelect(event: string) {
     this.serviceCountry.getOneData(event).subscribe({
       next: (data) => {
-        this.selectedCountry = data[0]; console.log(data);
+        this.selectedCountry = data[0];
+        this.countryWeather =data[0].name.common;
+        this.getWeather(this.countryWeather);
       },
       error: err => console.log(err),
       complete: () => console.log("selectedCountry ok")
     })
   }
-  
+
   //To get weather
-   getWeather(){
-     this.serviceWeather.getWeath().subscribe({//(data=>{console.log(data);
+  getWeather(name:string){
+     this.serviceWeather.getWeath(name).subscribe({
       next: (data) => {
-        this.selectedWeather = data; console.log(data);
+        this.selectedWeather = data; 
       },
       error: err => console.log(err),
       complete: () => console.log("selectedWeather ok")
-    })
-
-
-      
+    })  
   }
-
 
   // Link infos villes & info country 
   hideInfoCity(event: boolean) {

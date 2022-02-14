@@ -1,0 +1,26 @@
+{
+  "positions": [
+    {
+      "id": 1,
+      "longitude": 3.066667,
+      "latitude": 50.633333
+    },
+    {
+      "id": 2,
+      "longitude":2.468733,
+      "latitude": 50.8827628
+    },
+    
+    {
+      "id": 3,
+      "longitude": -149.4451681,
+      "latitude": -17.6873439
+    },
+    {
+      "id": 4,
+      "longitude": 2.3772525,
+      "latitude": 51.0347708
+    }
+   
+  ]
+}

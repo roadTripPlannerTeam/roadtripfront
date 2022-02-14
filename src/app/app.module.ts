@@ -46,6 +46,7 @@ registerLocaleData(localeFr, 'fr');
     TransportComponent,
     NavbarComponent,
 
+
   ],
   imports: [
     BrowserModule,
