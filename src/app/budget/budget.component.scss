@@ -1,0 +1,19 @@
+.container-budget {
+  display: flex;
+  flex-direction: column;
+  margin: 8vw;
+}
+
+.p-orange {
+  font-weight: bold;
+  color: #FF715B;
+  font-size: 1.2em;
+}
+
+.amount {
+  font-weight: bold;
+  color: #7A78E9;
+  text-align: end;
+  font-size: 1.5em;
+  margin-bottom: 0.1em;
+}

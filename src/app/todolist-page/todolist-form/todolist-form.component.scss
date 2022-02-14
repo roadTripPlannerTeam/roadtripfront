@@ -1,0 +1,46 @@
+.container-todo {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  font-size: 16px;
+  outline: 0;
+  border-width: 0 0 0.1vw;
+  border-color: #7D7B7B;
+  color: #5F5F5F;
+}
+
+input, textarea {
+  font-size: 16px;
+  outline: 0;
+  border-width: 0 0 0.1vw;
+  border-color: #7D7B7B;
+  color: #5F5F5F;
+  border-radius: 0;
+}
+
+.item-select {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-submit {
+  background-color: #7A78E9;
+  color: white;
+  border-radius: 24px;
+  border: none;
+  width: 40vw;
+  height: 6vh;
+  font-size: 2vh;
+  align-self: center;
+}
+
+.space {
+  margin: 8vw;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

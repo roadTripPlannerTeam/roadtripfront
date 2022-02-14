@@ -1,0 +1,10 @@
+<form [formGroup]="formBudgetAmount" (ngSubmit)="addAmount()" class="container-budget">
+  <input formControlName="initialAmount" class="input-conv space" type="text" placeholder="MONTANT">
+
+  <select class="item-select space" name="" id="">
+    <option value="">MONNAIE</option>
+  </select>
+  
+  <button class="btn-submit space" type="submit" [disabled]="formBudgetAmount.invalid">Ajouter</button>
+</form>
+

@@ -147,10 +147,17 @@ body { margin: 0; font-family: 'Poppins', sans-serif; }
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 100;
 }
 
 .fa-heart, .fa-map-marker-alt, .fa-location-arrow {
   color: #FF715B;
   stroke: #FFFFFF;
   stroke-width: 50;
+}
+
+// budget progressbar
+.p-progressbar {
+  padding: 1.6em;
+  margin-bottom: 0.8em;
 }

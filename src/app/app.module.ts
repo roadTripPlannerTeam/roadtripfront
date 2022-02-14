@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -12,19 +13,22 @@ import {TabViewModule} from 'primeng/tabview';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {ProgressBarModule} from 'primeng/progressbar';
 
 
 import { TabviewManageComponent } from './manage-page/tabview-manage/tabview-manage.component';
-import { TodolistComponent } from './manage-page/todolist/todolist.component';
-import { BudgetComponent } from './manage-page/budget/budget.component';
-import { ViewBudgetComponent } from './manage-page/view-budget/view-budget.component';
+import { TodolistComponent } from './todolist-page/todolist/todolist.component';
+import { BudgetComponent } from './budget/budget.component';
 import { ManageTripComponent } from './manage-page/page/manage-trip/manage-trip.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TodolistFormComponent } from './manage-page/todolist-form/todolist-form.component';
+import { TodolistFormComponent } from './todolist-page/todolist-form/todolist-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderInformationComponent } from './header-information/header-information.component';
 import { AffichageInformationComponent } from './affichage-information/affichage-information.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TodolistListComponent } from './todolist-page/todolist-list/todolist-list.component';
+import { TodolistPageComponent } from './todolist-page/todolist-page.component';
+import { BudgetFormComponent } from './budget-form/budget-form.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +36,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     ConversionComponent,
     TabviewManageComponent,
     TodolistComponent,
-    BudgetComponent,
-    ViewBudgetComponent,
     ManageTripComponent,
-    TodolistFormComponent,
     HeaderInformationComponent,
     AffichageInformationComponent,
-    NavbarComponent
+    NavbarComponent,
+    TodolistListComponent,
+    TodolistPageComponent,
+    TodolistFormComponent,
+    BudgetComponent,
+    BudgetFormComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +58,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    RouterModule,
+    ProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,16 @@
+<div class="container-todo">
+  <select class="space" name="" id="">
+    <option value="">LILLE - TOKYO</option>
+  </select>
+
+  <div>
+    <p>{{todolist.title}}</p>
+    <input type="text" [(ngModel)]="newTitle">
+    <p>{{todolist.content}}</p>
+    <textarea type="text" [(ngModel)]="newContent"></textarea>
+  </div>
+
+<button (click)="updateTodolist()" class="btn-submit space" type="submit">Modifier</button>
+</div>
+
+
