@@ -1,0 +1,21 @@
+.location-list {
+    max-height: 70px;
+    overflow-y: scroll;
+
+}
+.dialog-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.dialog-action{
+    display: flex;
+    justify-content: space-between;
+    span {
+        font-weight: 600;
+        color: rgb(252, 7, 7);
+    }
+}
