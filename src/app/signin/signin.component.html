@@ -1,0 +1,9 @@
+<div class="form-container">
+    <app-header-auth></app-header-auth>
+    <div class="auth-container">
+        <div >
+            <app-form-signin (Loggedin)="hideSignin($event)"></app-form-signin>
+        </div>
+        <app-not-yet-signin *ngIf="logBool"></app-not-yet-signin>
+    </div>
+</div>

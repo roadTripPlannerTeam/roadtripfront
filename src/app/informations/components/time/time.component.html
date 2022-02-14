@@ -1,0 +1,14 @@
+<!--BLOC HEURE-->
+
+<div class=" center-bloc">
+    <h2>Heure</h2>
+
+ 
+</div>  
+ 
+     <div class="div_affichage "> 
+         <div class="div_overlay"> </div>
+        <p class="stage_text">{{oneCount.translations.fra.common}} - {{oneCount.capital}}</p> 
+        <p class="stage_time">{{time | date:'h:mm a '}}</p>
+        <p class="stage_date" >{{today | date:'EEEE dd MMMM y '}}  {{oneCount.timezones[0]}}</p>
+    </div> 

@@ -1,0 +1,19 @@
+.bloc-select{
+    display: flex;
+   justify-content: center;
+   margin-bottom:3vh
+}
+
+.select-option{
+    width:60vw;
+    font-size: 4vh;
+    border: none;
+    background:transparent;
+    border-bottom: 2px solid black;
+   
+}
+
+.option{
+    width:2em;
+    font-size: 10px;
+}

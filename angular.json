@@ -10,6 +10,7 @@
           "style": "scss",
           "skipTests": true  
 
+
         },
         "@schematics/angular:application": {
           "strict": true
@@ -23,6 +24,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/roadtripfront",
+
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,10 +36,10 @@
             ],
             "styles": [
               "src/styles.scss"
+
+
             ],
-            "scripts": [
-              "src/assets/scripts/google.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -80,6 +82,7 @@
             },
             "development": {
               "browserTarget": "roadtripfront:build:development"
+
             }
           },
           "defaultConfiguration": "development"
@@ -88,6 +91,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "roadtripfront:build"
+
           }
         },
         "test": {
@@ -112,4 +116,5 @@
     }
   },
   "defaultProject": "roadtripfront"
+
 }

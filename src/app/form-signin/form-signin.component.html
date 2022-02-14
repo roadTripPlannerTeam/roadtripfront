@@ -1,0 +1,32 @@
+<div class="box">
+    <h3 *ngIf="!isLoggedIn"><strong>CONNEXION</strong></h3>
+
+    <form *ngIf="!isLoggedIn" [formGroup]="signinForm" name="form" (ngSubmit)="login()" class="formBloc">
+
+        <div class="formGroupe">
+
+            <label for="email">Email</label>
+            <input formControlName="email" Form type="email" id="email" required minlength="3" maxlength="16">
+
+        </div>
+
+        <div class="formGroupe">
+
+            <label for="password">Mot de passe</label>
+            <input formControlName="password" type="password" id="password" required minlength="3" maxlength="16">
+
+        </div>
+
+        <div class="btnSubmit">
+            <button [disabled]="!this.signinForm.valid" pButton type="submit" label="VALIDER"></button>
+            <div class="login-error" *ngIf="isLoginFailed">
+                <p>Veuillez vérifier votre email et votre mot de passe.</p>
+            </div>
+        </div>
+
+    </form>
+    <div class="login-success" *ngIf="isLoggedIn">
+        <p>Bienvenue {{nameUser}} !</p>
+        <p>Vous allez être redirigé(e) sur la page création d'itinéraire.</p>
+    </div>
+</div>

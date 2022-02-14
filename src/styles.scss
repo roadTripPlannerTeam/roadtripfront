@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+  
 /* FONT */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-indigo/theme.css";
+@import "primeng/resources/primeng.min.css";
+
 
 html {
   margin : 0 ;
@@ -328,4 +334,245 @@ html {
     padding-left: 0;
   }
 
-  // .cdk-overlay-container, .cdk-overlay-pane { z-index: 9999 !important; }
+
+
+// Header Information
+*{ 
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav{
+    height:7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0;
+}
+
+.faArrowLeft{
+    color:7D7B7B;
+    margin-left:2vh;
+}
+
+.faUser{
+    margin-right: 2vh;
+    color:#FFFFFF;
+    stroke: #FF715B;
+    stroke-width: 30;
+}
+
+//Affichage information
+.header-top{
+    height:25vh;
+    position:relative;
+}
+.overlay{
+    position:absolute;
+    z-index: 2;
+    width:100%;
+    height:25vh;
+    opacity: 0.6;
+    background: linear-gradient(#7A78E9, #FF715B);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ccff0000",endColorstr="#8500578",GradientType=1);
+}
+
+.affichage_information{
+    height:25vh;
+    z-index:2;
+    background-image: url("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2020.2F03.2F20.2F4967db41-3d3d-4c01-92d9-25bb18ba8a58.2Ejpeg/790x395/background-color/ffffff/quality/70/le-japon-lance-un-plan-de-relance-colossal-de-son-economie-face-a-la-crise-du-covid-19-1388000.jpg");
+    background-size: cover;
+}
+.holiday_text{
+    position: relative;
+    margin:0.5;
+    padding-top:1.5em;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.holiday_date{
+    position: relative;
+    margin:0;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+.img_bg_header{
+    height:25vh;
+}
+
+//Lien information
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    list-style: none;
+    padding :2vh 7vh 2vh 7vh;
+    margin-bottom: 2vh;
+}
+
+li:hover{
+    border-bottom:1px solid black;
+}
+
+//page information
+.center-bloc{
+    margin: 5vh 10vw 2vh 15vw;
+
+}
+
+a{
+    font-size:3vh;
+    color:#FF715B;
+    text-decoration: none;
+}
+
+p{
+    margin-bottom : 3vh;
+}
+
+
+.div_overlay{
+    position:absolute;
+    z-index: 2;
+    width:90vw;
+    height:20vh;
+    border-radius: 1.5em;
+    opacity: 0.55;
+    background: linear-gradient(#7A78E9, #FF715B);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ccff0000",endColorstr="#8500578",GradientType=1);
+}
+
+.div_affichage{
+    width:90vw;
+    height:20vh;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 1.5em;
+    z-index:2;
+    background-image: url("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2020.2F03.2F20.2F4967db41-3d3d-4c01-92d9-25bb18ba8a58.2Ejpeg/790x395/background-color/ffffff/quality/70/le-japon-lance-un-plan-de-relance-colossal-de-son-economie-face-a-la-crise-du-covid-19-1388000.jpg");
+    background-size: cover;
+}
+
+.image_backround{
+    width:80vw;
+    height:20vh;
+    border-radius: 1.5em;
+}
+
+
+
+.stage_text{
+    position: relative;
+    padding-top:1em;
+    margin:0em;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.stage_time{
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.5em;
+    margin:0;
+    font-weight: bold;
+}
+
+.stage_date{
+    position: relative;
+    margin:0;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.weather_city{
+    position: relative;
+    margin:0 0 0 1.5em;
+    z-index: 2;
+    color: #FFFFFF;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-top:1.5em;
+}
+
+.icone_weather{
+    position: relative;
+    float:right;
+    z-index: 2;
+    margin-top:2em;
+    margin-right: 1em;
+    width: 7em;
+}
+
+
+/* RESET */
+
+*, ::before, :after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* ICONE PRINCIPAL */
+
+.svg-inline--fa {
+    font-size: 2.5em;
+}
+
+.header-auth {
+    padding: 4vw;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #FF715B;
+    color: white;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    margin-bottom: 0;
+    position: absolute;
+    width:100%;
+}
+
+
+
+
+
+.fa-heart, .fa-map-marker-alt, .fa-location-arrow {
+    color: #FF715B;
+    stroke: #FFFFFF;
+    stroke-width: 50;
+}
+
+
+.svg-inline--fa {
+     font-size: 2.5em;
+    
+
+}
+

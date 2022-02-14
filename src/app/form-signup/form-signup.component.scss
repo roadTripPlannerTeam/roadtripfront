@@ -1,0 +1,84 @@
+h3 {
+    padding: 10vw;
+    text-align: center;
+    letter-spacing: 0.5vw;
+}
+
+.formBloc .formGroupe {
+    position: relative;
+    display: flex;
+    margin-bottom: 10vw;
+}
+
+.formBloc .formGroupe label {
+    padding-bottom: 10px;
+    position: absolute;
+    left: 0px;
+    transform: translateY(-50%);
+    color: #FFF;
+    font-size: 5vw;
+    transition: 0.4s ease-out;
+}
+
+.formBloc .formGroupe input {
+    display: block;
+    width: 100%;
+    padding-top: 2vw;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid #FFF;
+    color: #FFF;
+    transition: 0.4s ease-out;
+}
+
+.formBloc .formGroupe input.ng-invalid.ng-touched{
+    display: block;
+    width: 100%;
+    padding-top: 2vw;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid rgb(245, 55, 55);
+    color: #FFF;
+    transition: 0.4s ease-out;
+}
+
+.formBloc .formGroupe:focus-within label,
+.formBloc .formGroupe.animation label {
+    top: 0px;
+    transform: translateY(-100%);
+    color: #a9b2e7;
+}
+
+.formBloc .formGroupe:focus-within input,
+.formBloc .formGroupe.animation input {
+    border-bottom-color: #a9b2e7;
+}
+
+.btnSubmit {
+    display: flex;
+    justify-content: center;
+    padding: 0 1em 3em 1em;
+}
+
+.empty-input {
+    color: rgb(37, 27, 27);
+    position: absolute;
+    left: -60px;
+    top: -23px;
+    width: 2px;
+    height: 2px;
+    font-size: 2px;
+}
+
+.btn-danger{
+    background : red;
+    width:1em;
+    height:1em;
+    border-radius:0.5em
+}
+
+::placeholder { 
+    color: rgb(54, 47, 61);
+  }

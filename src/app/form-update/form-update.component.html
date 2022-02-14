@@ -1,0 +1,56 @@
+<div class="box">
+
+    <div class="user-icon">
+        <p-avatar icon="pi pi-user" size="xlarge" shape="circle">
+        </p-avatar>
+    </div>
+
+    <form  class="formBloc">
+
+        <div class="formGroupe">
+
+            <label for="nom">Prenom</label>
+            <input formControlName="firstName" type="text" id="nom" required minlength="3" maxlength="16">
+
+        </div>
+
+        <div class="formGroupe">
+
+            <label for="prenom">Nom</label>
+            <input formControlName="lastName" type="text" id="prenom" required minlength="3" maxlength="16">
+
+        </div>
+
+        <div class="formGroupe">
+
+            <label for="email">Email</label>
+            <input formControlName="email" type="text" id="email" required minlength="3" maxlength="30">
+
+        </div>
+
+        <div class="formGroupe">
+
+            <label for="mdp">Mot de passe</label>
+            <input formControlName="password" type="password" id="mdp" required minlength="3" maxlength="16">
+
+        </div>
+
+        <div (click)="newDateClicked()" *ngIf="!showNewDate" class="formGroupe">
+
+            <label for="date-naissance">Date de naissance</label>
+            <input  formControlName="birthday" type="texte" id="date-naissance" required>
+
+        </div>
+
+        <div *ngIf="showNewDate" class="formGroupe">
+
+            <label for="date-naissance">Date de naissance</label>
+            <input formControlName="birthday" type="date" id="date-naissance" required>
+
+        </div>
+
+        <div class="btnSubmit">
+            <button [disabled]="!this.updateForm.valid" pButton type="submit" label="VALIDER"></button>
+        </div>
+    </form>
+</div>

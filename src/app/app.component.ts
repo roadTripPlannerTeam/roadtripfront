@@ -10,6 +10,4 @@ export class AppComponent {
 }
 
 
-// todo : 
-// 1 - gérer date picker ( gérer disabled)
-// 2 - 
+
