@@ -1,0 +1,30 @@
+<mgl-map [style]="'mapbox://styles/mapbox/streets-v11'" [zoom]="[9]" [boxZoom] =true  [center]="[ 3.057256,50.629254]" [fitBounds]="bounds"
+  [fitBoundsOptions]="{padding: 20}">
+  <mgl-control>
+    <button mat-raised-button class="zoom-button" (click)="zoomToBounds()">
+      Zoom to bounds
+    </button>
+  </mgl-control>
+    <!-- marker of point  -->
+  <mgl-marker *ngFor="let city of cities ; let index = index "    [lngLat]="city[0]">
+    <mgl-popup  
+    [lngLat]="city[0]"
+ 
+  >
+    <h1>{{city[1]}}</h1>
+  </mgl-popup>
+    <div class="marker red-marker" ></div>
+  </mgl-marker>
+  <!-- marker to add to stage -->
+  <mgl-marker *ngFor="let marker of pathMarkers" [lngLat]="marker">
+    <div class="marker blue-marker" ></div>
+  </mgl-marker>
+  <mgl-control mglScale  ></mgl-control>
+  <mgl-control mglNavigation ></mgl-control>
+  <mgl-control mglGeolocate ></mgl-control>
+
+   <!-- line between points config -->
+  <mgl-layer id="LineString" type="line" [source]="source" [paint]="{'line-color': 'rgb(255, 102, 0)','line-width': 5}" [layout]="{'line-join': 'round','line-cap': 'round'}" #layer 
+  ></mgl-layer>
+</mgl-map>
+
