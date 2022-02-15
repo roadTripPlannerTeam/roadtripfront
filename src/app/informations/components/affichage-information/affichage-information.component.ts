@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Itinerary } from './../../../../shared/models/itinerary';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { mapPositions } from 'src/app/models/mapPositions';
 import { MapCustomServiceService } from 'src/app/services/map-custom-service.service';
 
@@ -15,7 +16,6 @@ export class AffichageInformationComponent implements OnInit {
   startCoordinate: string = "";
   startCountry: string = "";
   endCity: string = "";
-
   endLat!: number;
   endLng!: number;
   destinationCoordinate: string = "";
@@ -23,18 +23,36 @@ export class AffichageInformationComponent implements OnInit {
   constructor(private mapService: MapCustomServiceService) { }
 
   ngOnInit(): void {
-    this.getPosition();
+  this.getPosition();
+  this.getItinerary();
+ 
+  }
+
+  
+
+  getItinerary(){
+    let idItinerary = sessionStorage.getItem('itineraryId');
+    console.log(idItinerary);
+    this.mapService.findAll().subscribe((data)=>{
+      //  console.log(data); 
+      const itineraryData =  data.map(element =>{ 
+             element.id = idItinerary!;
+             return element
+       })
+       const con = itineraryData[0];
+       
+    })
   }
 
   // function for look bdd map positions
   getPosition() {
     this.mapService.findAll().subscribe(
       {
-        next: (data) => {
-          this.mapPositions = data;
-          console.log(data);
+        next: (con) => {
+          this.mapPositions = con;
+      //    console.log(con);
 
-          data.forEach((stage: any) => {
+          con.forEach((stage: any) => {
 
             for (const [key, value] of Object.entries(stage.stages)) {
 
@@ -43,20 +61,24 @@ export class AffichageInformationComponent implements OnInit {
               let keyDeparture = key1[0];
               
               let finalKey= key1[key1.length-1];
+         //     console.log(stage.stages[finalKey].name);
+              
 
               //premier element du tableau
               this.startLat = stage.stages[keyDeparture].position.latitude;
               this.startLng = stage.stages[keyDeparture].position.longitude;
               this.startCoordinate = this.startLng + "," + this.startLat;
-              this.startCity(this.startCoordinate);
 
               // end stages : 
               this.endLat = stage.stages[finalKey].position.latitude;
               this.endLng = stage.stages[finalKey].position.longitude;
               this.destinationCoordinate = this.endLng + "," + this.endLat;
-              this.destinationCity(this.destinationCoordinate);
             }
+          
+
           })
+          this.startCity(this.startCoordinate);
+          this.destinationCity(this.destinationCoordinate);
         },
         error: err => console.error(err),
         complete: () => console.log("oki")
@@ -68,9 +90,17 @@ export class AffichageInformationComponent implements OnInit {
   startCity(start: string): any {
     return this.mapService.findFirst(start).subscribe(
       data => {
-        console.log("data city ", data);
+        for (const [key, value] of Object.entries(data)){
+          if(value.id.includes("place")){
+              console.log(value);
 
-        this.startCountry = data.features[0].context[1].text;
+              this.startCountry = value.text          }
+          
+        }
+                
+        
+      
+
       }
     )
   }
@@ -78,7 +108,15 @@ export class AffichageInformationComponent implements OnInit {
   destinationCity(endCity: string) {
     this.mapService.findDestination(endCity).subscribe(
       data => {
-        this.endCity = data.features[0].context[1].text
+        for (const [key, value] of Object.entries(data)){
+          if(value.id.includes("place")){
+              console.log(value);
+              this.endCity = value.text
+          }
+          
+        }
+                
+        
       }
     )
   }

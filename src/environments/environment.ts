@@ -8,7 +8,7 @@ export const environment = {
   APIKEY :"c7c88e9eb7ba27bcd35a6ba3aa28663b",
   URLCountry : "https://restcountries.com/v3.1",
   URLIcon:"http://openweathermap.org/img/wn/" ,
-  URLBack:"http://localhost:8080/itinerary",
+  URLItinerary:"http://localhost:8080/itineraries",
   URLMapBox:"https://api.mapbox.com/geocoding/v5/mapbox.places/",
   APAIKEYMapBox:".json?access_token=pk.eyJ1IjoiYnJpY2VkbyIsImEiOiJja3pjeGRlOTkwMXRkMnFucjlodXB0YWx3In0.DJ9eedAkEdFQQX4C6fZObQ",
   URL:"http://localhost:8080"
