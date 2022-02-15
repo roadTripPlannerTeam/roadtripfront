@@ -32,7 +32,10 @@ export class TodolistService {
   }
 
   delete(id: string) {
-    return this.http.delete(`${environment.URL_TODO}${id}`);
+    const body = {
+      id: id
+    }
+    return this.http.delete(`${environment.URL_TODO}`, {body: body});
   }
 
 }
