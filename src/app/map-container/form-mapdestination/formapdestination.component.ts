@@ -231,6 +231,7 @@ export class FormapdestinationComponent implements OnInit {
       this.itineraryService.create(itineraryJson).subscribe((res: any) => {
         console.log("itinerary created  : ", res);
         this.itineraryId = res.id;
+        sessionStorage.setItem("itineraryId", res.id)
       })
 
 
@@ -278,7 +279,7 @@ export class FormapdestinationComponent implements OnInit {
       console.log("toto", test.toISOString())
 
       this.dateStageArrived = this.dateChooseForm.value.endDate;
-      
+
       const test1: _moment.Moment = this.dateChooseForm.value.endDate;
       test1.set({hour:1,minute:0,second:0,millisecond:0})
       console.log("test1 ", test1.toISOString())
@@ -343,7 +344,13 @@ export class FormapdestinationComponent implements OnInit {
     this.allLocation.splice(this.modelItemIndex, 1)
     this.currentDialog.close()
   }
+
+  redirect(){
+    this.router.navigate(['destination/info'])
+  }
+
 }
+
 
 
 

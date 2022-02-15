@@ -58,7 +58,7 @@
 
 
 <!-- stage form  -->
-<form *ngIf="showLocationAdd" [formGroup]="markerSetForm">
+<form *ngIf="showLocationAdd" [formGroup]="markerSetForm" >
     <p class="mb-6 title"> Ajouter des etapes ?</p>
     <ul *ngIf="allLocation.length" class="location-list">
         <li *ngFor="let item of allLocation; let i = index" (click)="onListItemClick(item, popupModal, i)">
@@ -90,7 +90,7 @@
         </div>
     </div>
     <div class="actions">
-        <button [disabled]="markerSetForm.invalid" class="mt-2 mb-4 btn btn-form mr-10" >Go?</button>
+        <button  class="mt-2 mb-4 btn btn-form mr-10" (click)=redirect() >Go?</button>
     </div>
 </form> 
 
