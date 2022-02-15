@@ -1,16 +1,20 @@
-<div class="container-todo">
-  <select class="space" name="" id="">
-    <option value="">LILLE - TOKYO</option>
-  </select>
 
-  <div>
-    <p>{{todolist.title}}</p>
-    <input type="text" [(ngModel)]="newTitle">
-    <p>{{todolist.content}}</p>
-    <textarea type="text" [(ngModel)]="newContent"></textarea>
-  </div>
+<div class="container-todo">
+  <!-- <select class="space" name="" id="">
+    <option value="">LILLE - TOKYO</option>
+  </select> -->
+
+  <!-- <form class="container-todo" [formGroup]="formUpdate" (ngSubmit)="updateTodolist()">
+    
+    <input type="text" class="space" formControlName="title" placeholder="TITRE">
+    
+    <textarea type="text" class="space" formControlName="content" content="content" placeholder="DESCRIPTION"></textarea>
+ 
 
 <button (click)="updateTodolist()" class="btn-submit space" type="submit">Modifier</button>
+
+</form> -->
+
 </div>
 
 

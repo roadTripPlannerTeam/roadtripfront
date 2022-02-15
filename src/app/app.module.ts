@@ -15,11 +15,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ProgressBarModule} from 'primeng/progressbar';
 
-
+import { ManageTripComponent } from './manage-page/manage-trip/manage-trip.component';
 import { TabviewManageComponent } from './manage-page/tabview-manage/tabview-manage.component';
 import { TodolistComponent } from './todolist-page/todolist/todolist.component';
 import { BudgetComponent } from './budget/budget.component';
-import { ManageTripComponent } from './manage-page/page/manage-trip/manage-trip.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodolistFormComponent } from './todolist-page/todolist-form/todolist-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

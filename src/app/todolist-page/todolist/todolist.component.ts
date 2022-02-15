@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Todolist } from 'src/app/_models/todolist';
 import { TodolistService } from 'src/app/_services/service-todolist/todolist.service';
@@ -10,52 +11,57 @@ import { TodolistService } from 'src/app/_services/service-todolist/todolist.ser
 })
 export class TodolistComponent implements OnInit {
 
-  id!: string;
+  getId!: any;
   todolist! : Todolist;
   todolists: Todolist[] = [];
-  @Input() newTitle!: string;
-  @Input() newContent!: string;
+
+  public formUpdate!: FormGroup;
 
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute, 
-    private todolistService: TodolistService) { 
-      this.id = this.route.snapshot.params['id'];
+    private todolistService: TodolistService,
+   ) { 
+    
     }
 
   ngOnInit(): void {
-    // this.route.paramMap.subscribe((paramMap: ParamMap) => {
-    //     this.todolistService.findById(this.id)
-    //     .subscribe((todolist: Todolist) => {
-    //       this.todolist = todolist;
-    //     })
+    // this.getAll();
+    // this.getId = this.route.snapshot.paramMap.get('id');
+    // console.log(this.getId);
+    // this.todolistService.findById(this.getId);
+    
+    // this.todolistService.findById(this.getId).subscribe(res => {
+    //   this.formUpdate.setValue({
+    //     title: res['title'],
+    //     content: res['content'],
     //   });
+    // });
+    // this.formUpdate = this.formBuilder.group({
+    //   title: [''],
+    //   content: [''],
+    // })
 
-    // this.id = this.route.snapshot.params['id'];
-    // this.todolistService.findById(this.id)
-    // .subscribe(todolist => this.todolist = todolist)
+    // this.route.snapshot.paramMap.get("id");
+    // this.todolistService.findById(this.id).subscribe((todolist) => {
+    //   this.todolist = todolist;
+    //})
   }
-  getById() {
-    this.todolistService.findById(this.id).subscribe(() => {
-     this.todolist;
-    })
-  }
+  
+  // getAll() {
+  //   this.todolistService.findAll().subscribe((data: Todolist[]) => {
+  //     this.todolists = data;
+  //     console.log(this.todolists);
+  //   });
+  // }
 
-  getAll() {
-    this.todolistService.findAll().subscribe((data: Todolist[]) => {
-      this.todolists = data;
-      console.log(this.todolists);
-    });
-  }
-
-  updateTodolist() {
-    this.todolistService.update(this.id, this.todolist)
-      .subscribe(() => {
-        this.getAll();
-      });
-  }
-
-  goBack() {
-    //this.router.navigate(['todolists/list']);
-  }
+  // updateTodolist() {
+    
+  //   this.todolistService.update(this.getId, this.formUpdate.value)
+  //     .subscribe(() => {
+  //       console.log('update!')
+        
+  //     })
+  // }
 }

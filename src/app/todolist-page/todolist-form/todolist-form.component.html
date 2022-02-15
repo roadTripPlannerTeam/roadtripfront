@@ -3,16 +3,17 @@
     
     <form class="container-todo" [formGroup]="formTodolist" (ngSubmit)="addTodo(); create(false)">
     
-      <!-- lier le select avec les itinéraires sauvegardés de l'utilisateur -->
+      <!-- lier le select avec les itinéraires sauvegardés de l'utilisateur
       <select class="space" name="" id="">
         <option value="">LILLE - TOKYO</option>
-      </select>
+      </select> -->
     
       <input formControlName="title" class="space" type="text" placeholder="TITRE">
     
       <textarea formControlName="content" class="space" rows="5" cols="30" pInputTextarea placeholder="DESCRIPTION"></textarea>
+
       
-      <button type="submit" [disabled]="formTodolist.invalid" class="btn-submit space" >Ajouter</button>
+    <button type="submit" [disabled]="formTodolist.invalid" class="btn-submit space" >Ajouter</button>
     </form>
  </div>
 

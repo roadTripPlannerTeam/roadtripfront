@@ -1,8 +1,9 @@
 import { TodolistService } from './../../_services/service-todolist/todolist.service';
-import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit, Output,  EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+
 import { Todolist } from 'src/app/_models/todolist';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todolist-form',
@@ -16,6 +17,7 @@ export class TodolistFormComponent implements OnInit {
   
   // init tableau vide pour la liste des todolist
   listTodolist: Todolist[] = [];
+  
 
   @Input()todolist!: Todolist;
 
@@ -29,7 +31,6 @@ export class TodolistFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private service: TodolistService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
     ) {
    }
 
@@ -48,7 +49,7 @@ export class TodolistFormComponent implements OnInit {
     this.service.create(this.formTodolist.value).subscribe(todolist => {
       console.log(todolist);
     });
-    
+    this.getData();
     this.formTodolist.reset();
   
   }
@@ -63,5 +64,7 @@ export class TodolistFormComponent implements OnInit {
   create(display: boolean) {
     this.addForm = display;
  }
+
+ 
 
 }
