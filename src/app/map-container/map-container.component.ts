@@ -54,6 +54,8 @@ export class MapContainerComponent {
     this.mapCustomService.direction(this.markers).subscribe((res: any)=>{
       console.log(res)
       this.coordinates = res.routes[0].geometry.coordinates; // coordonnée itinerary
+      console.log(this.coordinates);
+      
       // TODO : peut aussi récupérer distance and duration from res object 
       
 

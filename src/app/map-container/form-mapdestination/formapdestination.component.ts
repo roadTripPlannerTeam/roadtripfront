@@ -209,9 +209,12 @@ export class FormapdestinationComponent implements OnInit {
 
   // TODO : gérer le user  . <----------------
   itineraryJson(): Itinerary {
+    let user = JSON.parse(sessionStorage.getItem('auth-user')!)
+    console.log(user.id);
+    
     return {
       title: `itinerary from ${this.departName} to ${this.arriveeName}`,
-      user: { id: "62092e3e591ab07d303b70c8" }
+      user: { id: user.id}
     }
   }
 
@@ -275,7 +278,10 @@ export class FormapdestinationComponent implements OnInit {
       console.log("toto", test.toISOString())
 
       this.dateStageArrived = this.dateChooseForm.value.endDate;
-
+      
+      const test1: _moment.Moment = this.dateChooseForm.value.endDate;
+      test1.set({hour:1,minute:0,second:0,millisecond:0})
+      console.log("test1 ", test1.toISOString())
 
       const stageDepature = this.stageJson(`stage departure : ${this.departName}`, this.departurePosition, this.dateStageDeparture, this.itineraryId)
 

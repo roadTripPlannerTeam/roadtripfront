@@ -13,15 +13,15 @@ export class ItineraryService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Itinerary[]> {
-    return this.http.get<Itinerary[]>(`${environment.URL}/itinerary`);
+    return this.http.get<Itinerary[]>(`${environment.URL}/itineraries`);
   }
 
   create(itinerary: Itinerary): Observable<Itinerary> {
-    return this.http.post<Itinerary>(`${environment.URL}/itinerary`, itinerary)
+    return this.http.post<Itinerary>(`${environment.URL}/itineraries`, itinerary)
   }
 
   delete(id: number): Observable<Itinerary> {
-    return this.http.delete<Itinerary>(`${environment.URL}/itinerary/${id}`)
+    return this.http.delete<Itinerary>(`${environment.URL}/itineraries/${id}`)
   }
 
   // modify(position: Itinerary): Observable<Itinerary> {

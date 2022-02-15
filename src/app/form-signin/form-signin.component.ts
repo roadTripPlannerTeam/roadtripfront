@@ -48,7 +48,6 @@ export class FormSigninComponent implements OnInit {
         this.Loggedin.emit(this.bool);
         this.nameUser = data.firstName;
         setTimeout(this.goToItineraries.bind(this), 3000);
-        
       },
       error: (err) => {
         console.error(err);
@@ -59,6 +58,7 @@ export class FormSigninComponent implements OnInit {
   }
 
   goToItineraries(): void {
-    this.router.navigate(["profil"]);
+    this.router.navigate(["itinerary/create"]);
+
   }
 }

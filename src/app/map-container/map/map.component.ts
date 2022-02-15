@@ -1,16 +1,16 @@
 import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { GeoJSONSourceRaw, LngLatBounds } from 'mapbox-gl';
-import { LayerComponent, MapService } from 'ngx-mapbox-gl';
 import { debounceTime, distinctUntilChanged, Observable, Subscription } from 'rxjs';
 import { MapCustomService } from 'src/shared/services/map-custom.service';
+import { LayerComponent, MapService } from 'ngx-mapbox-gl';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit, OnChanges{
+export class MapComponent implements OnInit ,OnChanges{
   @Input() source: any
   @Input() markers: any = [];
   @Input() cities: any = [];
@@ -31,13 +31,14 @@ export class MapComponent implements OnInit, OnChanges{
   constructor(private mapCustomService: MapCustomService){}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['source']) {
+    if (changes['source'] ) {
       this.reset()
-      this.zoomToBounds()
-    }
+      // this.zoomToBounds()
+      }
   }
 
   ngOnInit(): void {
+    
     this.subscription = this.input.valueChanges
     .pipe(debounceTime(1000), distinctUntilChanged())
     .subscribe(res => {
@@ -70,7 +71,11 @@ export class MapComponent implements OnInit, OnChanges{
   }
 
   reset(){
-    this.layer.MapService.removeSource('LineString')
+    if(this.layer == undefined ){
+      return 
+    }else{
+      this.layer.MapService.removeSource('LineString')
+    }
   }
 }
 
