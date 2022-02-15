@@ -1,11 +1,23 @@
 <div class="container-budget">
+
+  <form class="container-budget">
+    <input formControlName="initialAmount" class="input-conv space" type="text" placeholder="MONTANT">
+    
+    <button class="btn-submit space" type="submit" [disabled]="formBudgetAmount.invalid">Ajouter</button>
+  </form>
  
-  <p class="amount">5000€</p>
+  <p class="amount">0</p>
 
   <p-progressBar></p-progressBar>
 
+  <div ng>
+    <p class="p-orange" >Ajouter une dépense</p>
+    <p class="p-orange"  >Modifier mon budget</p>
+  </div>
 
-  <p class="p-orange" >Ajouter une dépense</p>
-  <p class="p-orange"  >Modifier mon budget</p>
+
+  <!-- <div>
+    <app-budget-form></app-budget-form>
+  </div> -->
 </div>
 

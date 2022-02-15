@@ -25,7 +25,6 @@ import { AffichageInformationComponent } from './affichage-information/affichage
 import { NavbarComponent } from './navbar/navbar.component';
 import { TodolistListComponent } from './todolist-page/todolist-list/todolist-list.component';
 import { TodolistPageComponent } from './todolist-page/todolist-page.component';
-import { BudgetFormComponent } from './budget-form/budget-form.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +37,7 @@ import { BudgetFormComponent } from './budget-form/budget-form.component';
     TodolistListComponent,
     TodolistPageComponent,
     TodolistFormComponent,
-    BudgetComponent,
-    BudgetFormComponent
+    BudgetComponent
   ],
   imports: [
     BrowserModule,
