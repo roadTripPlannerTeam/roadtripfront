@@ -1,11 +1,10 @@
 <div class="container-budget">
  
-  <p class="amount">5000€</p>
+  <p class="amount">5000</p>
 
   <p-progressBar></p-progressBar>
 
-
-  <p class="p-orange" >Ajouter une dépense</p>
-  <p class="p-orange"  >Modifier mon budget</p>
+  <p class="p-orange" (click)="addExpense()">Ajouter une dépense</p>
+  <p class="p-orange" (click)="modifyBudget()" >Modifier mon budget</p>
 </div>
 

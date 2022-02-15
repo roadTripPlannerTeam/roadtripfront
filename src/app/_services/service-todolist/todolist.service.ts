@@ -1,7 +1,7 @@
 import { Todolist } from './../../_models/todolist';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 // const ROOT_URL : string = "http://localhost:8080/todolists/";
@@ -32,7 +32,10 @@ export class TodolistService {
   }
 
   delete(id: string) {
-    return this.http.delete(`${environment.URL_TODO}${id}`);
+    const body = {
+      id: id
+    }
+    return this.http.delete(`${environment.URL_TODO}`, {body: body});
   }
 
 }

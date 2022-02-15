@@ -12,4 +12,11 @@ export class BudgetComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addExpense() {
+
+  }
+
+  modifyBudget() {
+    
+  }
 }
