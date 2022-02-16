@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 
@@ -64,7 +65,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodolistFormComponent } from './todolist-page/todolist-form/todolist-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderInformationComponent } from './header-information/header-information.component';
-import { AffichageInformationComponent } from './affichage-information/affichage-information.component';
+import { AffichageInformationComponent } from './informations/components/affichage-information/affichage-information.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { TodolistListComponent } from './todolist-page/todolist-list/todolist-list.component';
 import { TodolistPageComponent } from './todolist-page/todolist-page.component';
