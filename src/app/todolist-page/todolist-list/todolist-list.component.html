@@ -1,0 +1,32 @@
+
+<div class="container-todo">
+    <!-- CREATE -->
+    <div *ngIf="addForm">
+      <app-todolist-form (todoSaved)="todoIsSaved($event)"></app-todolist-form>
+    </div>
+  
+    <!-- LIST -->
+  
+    <div *ngIf="!addForm">
+      <button class="btn-add-todo" (click)="create()">Nouvelle todolist</button>
+  
+      <div *ngIf="!modify">
+        <div class="container-list" *ngFor="let todolist of todolists" (click)="onSelect(todolist)">
+          <p class="delete-todo">
+            <a (click)="deleteTodolist(todolist.id)">X</a>
+          </p>
+  
+          <!-- show infos -->
+          <div>
+            <p>{{ todolist.title }}:</p>
+            <p>{{ todolist.content }}</p>
+  
+            <!-- <p class="update-todo">
+              <a class="link-update" (click)="todolistUpdate()">Modifier</a>
+            </p> -->
+          </div>
+        </div>
+      </div>
+  
+  
+    </div>
