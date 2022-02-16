@@ -35,14 +35,15 @@ export class InformationComponent implements OnInit {
   // variable for getData & getOne data
   countrie: Country[] = [];
   allCountrie: Country[] = [];
-  pays: string = "";
+  //pays: string = "";
   country: string = "";
-  value: string = "";
-  countrydb: string = "";
+  //value: string = "";
+  //countrydb: string = "";
   selectedCountry!: Country;
   selectedWeather! : Weather;
   weatherlike : Weather[]=[]
   countryWeather:string="";
+  timezoneCountry!:number;
  
   //
   constructor(private serviceCountry: CountryServiceService , private serviceWeather: MeteoServiceService ) { }
@@ -60,8 +61,16 @@ export class InformationComponent implements OnInit {
     });
   }
  
+  nameDestination(event:string){
+    console.log(event);
+    this.country=event;
+    this.getWeather(event);
+  }
+
  
   idSelect(event: string) {
+    console.log(event);
+    
     this.serviceCountry.getOneData(event).subscribe({
       next: (data) => {
         this.selectedCountry = data[0];
@@ -77,6 +86,7 @@ export class InformationComponent implements OnInit {
   getWeather(name:string){
      this.serviceWeather.getWeath(name).subscribe({
       next: (data) => {
+        this.timezoneCountry =data.timezone;
         this.selectedWeather = data; 
       },
       error: err => console.log(err),

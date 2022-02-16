@@ -33,9 +33,6 @@ export class InformationCityTitleComponent implements OnInit {
     this.sun.emit(this.infoCityTitle);
   }
 
-  transport(){
-    this.car.emit(this.infoCityTitle);
-
-  }
+ 
 
 }

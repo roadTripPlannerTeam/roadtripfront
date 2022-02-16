@@ -23,7 +23,7 @@ export class MapCustomServiceService {
   findFirst(startCoordinate:string) {
     return this.http.get<mapPositions>(`${environment.URLMapBox}${startCoordinate} ${environment.APAIKEYMapBox}`)
     .pipe(map((res) => {
-      console.log( res);
+     // console.log( res);
       return res.features[0].context
     }))
   }
@@ -31,7 +31,7 @@ export class MapCustomServiceService {
   findDestination(endCoordinate:string){
     return this.http.get<mapPositions>(`${environment.URLMapBox}${endCoordinate} ${environment.APAIKEYMapBox}`)
     .pipe(map((res) => {
-      console.log( res);
+     // console.log( res);
       return res.features[0].context
     }))
   }

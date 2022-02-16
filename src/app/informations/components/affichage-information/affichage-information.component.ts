@@ -1,5 +1,5 @@
 import { Itinerary } from './../../../../shared/models/itinerary';
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 import { mapPositions } from 'src/app/models/mapPositions';
 import { MapCustomServiceService } from 'src/app/services/map-custom-service.service';
 
@@ -19,7 +19,12 @@ export class AffichageInformationComponent implements OnInit {
   endLat!: number;
   endLng!: number;
   destinationCoordinate: string = "";
+  dateDeparture:string="";
+  dateDestination:string = "";
 
+  @Output() envoiId : EventEmitter<string> = new EventEmitter<string>(); 
+
+  
   constructor(private mapService: MapCustomServiceService) { }
 
   ngOnInit(): void {
@@ -32,14 +37,14 @@ export class AffichageInformationComponent implements OnInit {
 
   getItinerary(){
     let idItinerary = sessionStorage.getItem('itineraryId');
-    console.log(idItinerary);
+  //  console.log(idItinerary);
     this.mapService.findAll().subscribe((data)=>{
       //  console.log(data); 
       const itineraryData =  data.map(element =>{ 
              element.id = idItinerary!;
              return element
        })
-       const con = itineraryData[0];
+       const itinerarydata = itineraryData[0];
        
     })
   }
@@ -48,11 +53,11 @@ export class AffichageInformationComponent implements OnInit {
   getPosition() {
     this.mapService.findAll().subscribe(
       {
-        next: (con) => {
-          this.mapPositions = con;
+        next: (itinerarydata) => {
+          this.mapPositions = itinerarydata;
       //    console.log(con);
 
-          con.forEach((stage: any) => {
+      itinerarydata.forEach((stage: any) => {
 
             for (const [key, value] of Object.entries(stage.stages)) {
 
@@ -61,8 +66,10 @@ export class AffichageInformationComponent implements OnInit {
               let keyDeparture = key1[0];
               
               let finalKey= key1[key1.length-1];
-         //     console.log(stage.stages[finalKey].name);
-              
+             
+              //Recuperation des dates de début et de fin 
+              this.dateDeparture = key1[0];
+              this.dateDestination = key1[key1.length-1]
 
               //premier element du tableau
               this.startLat = stage.stages[keyDeparture].position.latitude;
@@ -92,15 +99,11 @@ export class AffichageInformationComponent implements OnInit {
       data => {
         for (const [key, value] of Object.entries(data)){
           if(value.id.includes("place")){
-              console.log(value);
+            //  console.log(value);
 
               this.startCountry = value.text          }
           
         }
-                
-        
-      
-
       }
     )
   }
@@ -110,8 +113,9 @@ export class AffichageInformationComponent implements OnInit {
       data => {
         for (const [key, value] of Object.entries(data)){
           if(value.id.includes("place")){
-              console.log(value);
+             // console.log(value);
               this.endCity = value.text
+              this.envoiId.emit(this.endCity)
           }
           
         }

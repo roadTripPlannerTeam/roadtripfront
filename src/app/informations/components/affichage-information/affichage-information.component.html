@@ -2,7 +2,7 @@
     <div class="overlay"></div>
     <div class=" affichage_information">
         <p class=holiday_text> {{startCountry}} - {{endCity}}</p>
-        <p class="holiday_date">17/02/2022-20/09/2023</p>
+        <p class="holiday_date">{{dateDeparture | date: 'dd/MM/yyyy'}}-{{dateDestination| date: 'dd/MM/yyyy'}}</p>
 
     </div>
 </header>

@@ -8,7 +8,7 @@
  
      <div class="div_affichage "> 
          <div class="div_overlay"> </div>
-        <p class="stage_text">{{oneCount.translations.fra.common}} - {{oneCount.capital}}</p> 
-        <p class="stage_time">{{time | date:'h:mm a '}}</p>
-        <p class="stage_date" >{{today | date:'EEEE dd MMMM y '}}  {{oneCount.timezones[0]}}</p>
+        <p class="stage_text">{{name}}</p> 
+        <p class="stage_time">{{utc | date:'h:mm a '}}</p>
+        <p class="stage_date" >{{today | date:'EEEE dd MMMM y '}}  (utc:{{timezone.timezone|date:'h:mm'}})</p>
     </div> 

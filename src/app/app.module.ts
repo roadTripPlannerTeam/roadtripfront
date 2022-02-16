@@ -36,14 +36,12 @@ import { AffichageInformationComponent } from './informations/components/afficha
 import { LienInformationComponent } from './informations/components/lien-information/lien-information.component';
 import { SelectOptionComponent } from './informations/components/select-option/select-option.component';
 import { InformationCountryTitleComponent } from './informations/components/information-country-title/information-country-title.component';
-import { InfoGeneralesCountryComponent } from './informations/components/info-generales-country/info-generales-country.component';
 import { MotsClesComponent } from './informations/components/mots-cles/mots-cles.component';
 import { ConditionGeneralCountryComponent } from './informations/components/condition-general-country/condition-general-country.component';
 import { InformationCityTitleComponent } from './informations/components/information-city-title/information-city-title.component';
 import { InfoGeneraleCityComponent } from './informations/components/info-generale-city/info-generale-city.component';
 import { TimeComponent } from './informations/components/time/time.component';
 import { WeatherComponent } from './informations/components/weather/weather.component';
-import { TransportComponent } from './informations/components/transport/transport.component';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
@@ -74,14 +72,12 @@ import { FormSigninComponent } from './form-signin/form-signin.component';
     LienInformationComponent,
     SelectOptionComponent,
     InformationCountryTitleComponent,
-    InfoGeneralesCountryComponent,
     MotsClesComponent,
     ConditionGeneralCountryComponent,
     InformationCityTitleComponent,
     InfoGeneraleCityComponent,
     TimeComponent,
     WeatherComponent,
-    TransportComponent,
     FormSignupComponent,
     NotYetSignupComponent,
     HeaderAuthComponent,

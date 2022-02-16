@@ -12,16 +12,11 @@ export class InformationCountryTitleComponent implements OnInit {
  
   infoCountryTitle: boolean = false;
 
-  @Output() infoCountry: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() condition: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() motcles: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  infoGeneraleCountry():void{
-    this.infoCountry.emit(this.infoCountryTitle);
   }
 
   conditionGenerale(){

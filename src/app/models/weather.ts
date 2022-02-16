@@ -1,4 +1,5 @@
 export interface Weather {
+    timezone:number;
     name: string;
     
     sys:{
