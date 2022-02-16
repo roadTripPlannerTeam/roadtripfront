@@ -1,22 +1,35 @@
 <div class="container-budget">
 
+  <span *ngIf="zeroAmount">Budget insuffisant</span>
+
     <form class="container-budget">
-      <input formControlName="initialAmount" class="input-conv space" type="text" placeholder="MONTANT">
+      <input class="input-conv space" type="text" placeholder="MONTANT" #count>
       
-      <button class="btn-submit space" type="submit" [disabled]="formBudgetAmount.invalid">Ajouter</button>
+      <button class="btn-submit space"  (click)="addBudget(count.value)" [disabled]="formBudgetAmount.invalid">Ajouter</button>
     </form>
    
-    <p class="amount">0</p>
+    <p class="amount">{{sum}}€</p>
   
-    <p-progressBar></p-progressBar>
+    <progress id="file" value={{sum}} max={{totalSum}}> </progress>
   
-    <div ng>
-      <p class="p-orange" >Ajouter une dépense</p>
-      <p class="p-orange"  >Modifier mon budget</p>
-    </div>
+    
   
-  
-    <!-- <div>
-      <app-budget-form></app-budget-form>
-    </div> -->
   </div>
+  <div class="container-budget">
+      <p class="p-orange space-left" (click)="showAddExpense()">Ajouter une dépense</p>
+      <form>
+        <div class="space-left" *ngIf="hideAddExpense">
+          <input  type="text" placeholder="AJOUTER UNE DEPENSE" #expense>     
+          <button class="btn-add" type="reset"(click)="addExpense(expense.value)">+</button>
+
+        </div>
+      </form>
+      <p class="p-orange space"  (click)="showModifyBudget()">Modifier mon budget</p>
+      <form>
+        <div class="space-left" *ngIf="hideModifyBudget">
+          <input  type="text" placeholder="MODIFIER MON BUDGET" #newBudget>     
+          <button class="btn-add" type="reset"(click)="modifyBudget(newBudget.value)">+</button>
+
+        </div>
+      </form>
+    </div>
