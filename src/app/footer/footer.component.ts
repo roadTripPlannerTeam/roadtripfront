@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
@@ -15,9 +16,13 @@ export class FooterComponent implements OnInit {
   faHeart = faHeart;
 
   
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  redirectTodo(): void {
+    this.route.navigate(['/todolists'])
   }
 
 }

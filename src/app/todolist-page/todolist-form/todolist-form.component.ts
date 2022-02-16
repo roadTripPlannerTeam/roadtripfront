@@ -1,7 +1,5 @@
-
 import {
   Component,
-  Injectable,
   Input,
   OnInit,
   Output,
@@ -55,7 +53,7 @@ export class TodolistFormComponent implements OnInit {
   // reset the data after submit
   addTodo(): void {
     this.service.create(this.formTodolist.value).subscribe(() => {
-      this.todoSaved.emit(true)
+      this.todoSaved.emit(true);
     });
   }
 
