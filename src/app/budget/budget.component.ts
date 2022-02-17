@@ -27,16 +27,13 @@ export class BudgetComponent implements OnInit {
   addBudget(count:any){
     console.log(count);
     this.sum=count;
-    this.totalSum = count;
-    
+    this.totalSum = count;  
   }
 
   addExpense(expense:any){
     if(this.sum-expense >=0){
       this.sum = this.sum-expense;
-     
     }else{
-      console.log("message inferieur a 0");
       this.zeroAmount = true;
     }
     this.hideAddExpense = false;

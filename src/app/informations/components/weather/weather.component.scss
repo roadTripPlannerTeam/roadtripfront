@@ -1,3 +1,13 @@
 h2{
     color: #FF715B;  
 }
+
+.weather_city{
+    position: relative;
+    margin:0 0 0 1.5em;
+    z-index: 2;
+    color: #FFFFFF;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-top:1.5em;
+}

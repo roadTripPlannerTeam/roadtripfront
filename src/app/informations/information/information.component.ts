@@ -6,6 +6,7 @@ import { Country } from 'src/app/models/countrie';
 
 import { Component, OnInit } from '@angular/core';
 import { CountryServiceService } from 'src/app/services/country-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-information',
@@ -46,7 +47,7 @@ export class InformationComponent implements OnInit {
   timezoneCountry!:number;
  
   //
-  constructor(private serviceCountry: CountryServiceService , private serviceWeather: MeteoServiceService ) { }
+  constructor(private serviceCountry: CountryServiceService , private serviceWeather: MeteoServiceService , private router :Router) { }
 
   ngOnInit(): void {
     this.getData();
@@ -163,6 +164,8 @@ export class InformationComponent implements OnInit {
       this.hideInfoCountry(event);
     } else if (this.infogeneraleCountry == true || this.conditionGeneral == true || this.motcles == true) {
       this.hideInfoCity(event)
+    }else if(this.infoCityTitle == true|| this.infoCountryTitle == true){
+        this.router.navigate(['itinerary/create'])
     }
   }
 

@@ -1,3 +1,53 @@
 h2{
     color: #FF715B;  
 }
+.div_affichage{
+    width:90vw;
+    height:20vh;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 1.5em;
+    z-index:2;
+    background-image: url("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2020.2F03.2F20.2F4967db41-3d3d-4c01-92d9-25bb18ba8a58.2Ejpeg/790x395/background-color/ffffff/quality/70/le-japon-lance-un-plan-de-relance-colossal-de-son-economie-face-a-la-crise-du-covid-19-1388000.jpg");
+    background-size: cover;
+}
+
+.image_backround{
+    width:80vw;
+    height:20vh;
+    border-radius: 1.5em;
+}
+
+
+
+.stage_text{
+    position: relative;
+    padding-top:1em;
+    margin:1em;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+.stage_time{
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.5em;
+    margin:1em;
+    
+    font-weight: bold;
+}
+
+.stage_date{
+    position: relative;
+    margin:0;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}

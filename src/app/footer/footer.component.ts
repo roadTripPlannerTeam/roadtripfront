@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 @Component({
@@ -10,8 +10,8 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  faSearchLocation = faSearchLocation;
-  faMapMarkerAlt = faMapMarkerAlt;
+  faSearchLocation = faSearch;
+  faStickyNote = faStickyNote;
   faLocationArrow = faLocationArrow;
   faHeart = faHeart;
 

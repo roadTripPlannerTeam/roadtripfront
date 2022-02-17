@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSearchLocation, faStickyNote} from '@fortawesome/free-solid-svg-icons';
+
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,9 +12,9 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent implements OnInit {
 
   faSearchLocation = faSearchLocation;
-  faMapMarkerAlt = faMapMarkerAlt;
   faLocationArrow = faLocationArrow;
   faHeart = faHeart;
+  faStickyNote= faStickyNote;
 
   constructor() { }
 
