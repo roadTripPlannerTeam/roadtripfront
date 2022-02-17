@@ -310,7 +310,6 @@ export class FormapdestinationComponent implements OnInit {
   addLocation() {
     // vérifie si on a objet et si form est valid 
     if (!!this.selectedLocation && this.markerSetForm.valid) {
-
       this.allLocation.push({
         name: this.selectedLocation.text,
         date: this.markerSetForm.value.date // récupére la date 
