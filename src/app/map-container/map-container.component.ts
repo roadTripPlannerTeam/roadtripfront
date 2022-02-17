@@ -102,6 +102,7 @@ export class MapContainerComponent {
 
     // we send to the query and return the coordinates 
     this.mapCustomService.direction(markerList).subscribe((res: any)=>{
+      
       this.coordinates = res.routes[0].geometry.coordinates;
       this.source = {
         type: 'geojson',
