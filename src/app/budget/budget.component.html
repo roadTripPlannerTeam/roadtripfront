@@ -1,35 +1,55 @@
 <div class="container-budget">
-
   <span *ngIf="zeroAmount">Budget insuffisant</span>
 
-    <form class="container-budget">
-      <input class="input-conv space" type="text" placeholder="MONTANT" #count>
-      
-      <button class="btn-submit space"  (click)="addBudget(count.value)" [disabled]="formBudgetAmount.invalid">Ajouter</button>
-    </form>
-   
-    <p class="amount">{{sum}}€</p>
-  
-    <progress id="file" value={{sum}} max={{totalSum}}> </progress>
-  
-    
-  
-  </div>
-  <div class="container-budget">
-      <p class="p-orange space-left" (click)="showAddExpense()">Ajouter une dépense</p>
-      <form>
-        <div class="space-left" *ngIf="hideAddExpense">
-          <input  type="text" placeholder="AJOUTER UNE DEPENSE" #expense>     
-          <button class="btn-add" type="reset"(click)="addExpense(expense.value)">+</button>
-
-        </div>
-      </form>
-      <p class="p-orange space"  (click)="showModifyBudget()">Modifier mon budget</p>
-      <form>
-        <div class="space-left" *ngIf="hideModifyBudget">
-          <input  type="text" placeholder="MODIFIER MON BUDGET" #newBudget>     
-          <button class="btn-add" type="reset"(click)="modifyBudget(newBudget.value)">+</button>
-
-        </div>
-      </form>
+  <form *ngIf="amountForm" class="container-budget">
+    <div class="flex-error">
+      <input
+        class="input-conv space"
+        type="text"
+        placeholder="MONTANT"
+        #count
+      />
+      <span *ngIf="errorAmount"> Entrez un chiffre positif </span>
     </div>
+    <button
+      class="btn-submit space"
+      (click)="addBudget(count.value)"
+      [disabled]="formBudgetAmount.invalid"
+    >
+      Ajouter
+    </button>
+  </form>
+
+  <p class="amount">{{ sum }}€</p>
+
+  <progress id="file" value="{{ sum }}" max="{{ totalSum }}"></progress>
+</div>
+<div *ngIf="showbuttonExpense" class="container-budget">
+  <p class="p-orange space-left" (click)="showAddExpense()">
+    Ajouter une dépense
+  </p>
+  <form>
+    <div class="space-left" *ngIf="hideAddExpense">
+      <input type="text" placeholder="AJOUTER UNE DEPENSE" #expense />
+      <button class="btn-add" type="reset" (click)="addExpense(expense.value)">
+        +
+      </button>
+    </div>
+  </form>
+  <p class="p-orange space" (click)="showModifyBudget()">Modifier mon budget</p>
+  <form>
+    <div class="space-left" *ngIf="hideModifyBudget">
+      <input type="text" placeholder="MODIFIER MON BUDGET" #newBudget />
+      <button
+        class="btn-add"
+        type="reset"
+        (click)="modifyBudget(newBudget.value)">+
+      </button>
+    </div>
+  </form>
+  <ul class="flex">
+    <li *ngFor="let expense of expenses; let i = index" [value]="expense">
+      {{ i + 1 }} -  dépense : {{ expense }} €
+    </li>
+  </ul>
+</div>

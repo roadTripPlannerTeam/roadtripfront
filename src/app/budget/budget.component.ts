@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,12 +8,18 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class BudgetComponent implements OnInit {
  
+  @ViewChild('count') public el! : ElementRef<HTMLInputElement>
   sum:any=0
   totalSum : number =0;
   expenseSum:number=0;
   zeroAmount: boolean = false;
   hideAddExpense: boolean = false;
   hideModifyBudget: boolean = false;
+  errorAmount :boolean = false ;
+  amountForm :boolean = true ;
+  expenses: number[] =[];
+  showbuttonExpense :boolean = false ;
+
 
   public formBudgetAmount: FormGroup = new FormGroup({
     initialAmount: new FormControl(''),
@@ -25,14 +31,26 @@ export class BudgetComponent implements OnInit {
   }
 
   addBudget(count:any){
-    console.log(count);
-    this.sum=count;
-    this.totalSum = count;  
+    if (Number(count) && count >0){
+      this.sum=count;
+      this.totalSum = count; 
+      this.errorAmount = false;
+      this.amountForm = false ; 
+      this.showbuttonExpense= true;
+    }else { 
+      console.log(" hello ")
+      this.sum = 0 ;
+      this.el.nativeElement.value = '' ; 
+      this.errorAmount = true ; 
+      
+    }
+   
   }
 
   addExpense(expense:any){
-    if(this.sum-expense >=0){
+    if(this.sum-expense >=0 && expense > 0 ){
       this.sum = this.sum-expense;
+     this.expenses.push(expense)
     }else{
       this.zeroAmount = true;
     }
@@ -40,7 +58,7 @@ export class BudgetComponent implements OnInit {
   }
 
   showAddExpense() {
-    this.hideAddExpense = true;
+    this.hideAddExpense = !this.hideAddExpense
   }
 
   modifyBudget(newBudget: any) {

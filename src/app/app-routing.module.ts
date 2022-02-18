@@ -17,6 +17,7 @@ const routes: Routes = [
   { path:'itinerary/create', component : MapContainerComponent  } ,
   { path:'destination/info', component : InformationComponent  } ,
   {path: 'todolists', component: TodolistPageComponent},
+  {path: 'budget', component: TodolistPageComponent},
 
 
 
